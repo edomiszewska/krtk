@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+
+    <title>krtk</title>
+</head>
+<body>
+<form action="index.php" method="post">
+bok pierwszy <input type="number" name="b1"><br>
+bok drugi <input type="number" name="b2"><br>
+bok trzeci <input type="number" name="b3"><br>
+
+<input type="submit">
+</form>
+
+
+</body>
+</html>
+<?php
+
+if(isset($_POST['b1'])&&isset($_POST['b2'])&&isset($_POST['b3'])){
+
+    $tablica=[];
+    $b1=$_POST['b1'];
+    $b2=$_POST['b2'];
+    $b3=$_POST['b3'];
+    array_push($tablica,$b1);
+    array_push($tablica,$b2);
+    array_push($tablica,$b3);
+    sort($tablica);
+    //jesli 1 i 2 wiekszy od 3 to mozna
+    if($tablica[0]+$tablica[1]>$tablica[2]){
+        echo"można stworzyć trojkąt";
+    }
+    else{
+        echo "nie można stworzyć trojkata!!!!";
+    }
+}
+
+
+
+?>
